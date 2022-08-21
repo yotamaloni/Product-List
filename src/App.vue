@@ -1,6 +1,6 @@
 <template>
   <section class="app-container">
-  <AppHeader />
+    <AppHeader />
     <main>
       <RouterView />
     </main>
@@ -17,20 +17,20 @@ export default {
     AppHeader,
     AppFooter,
   },
-  async created() {
-    this.$store.dispatch({ type: "setUser" });
-  },
 };
 </script>
 
 
 <style lang="scss" scoped>
 .app-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #ebecf0;
+
   main {
     flex-grow: 1;
+    margin: 20px 20px;
   }
 }
 </style>

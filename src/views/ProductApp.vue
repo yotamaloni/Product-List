@@ -51,8 +51,8 @@ export default {
   .date-container {
     display: flex;
     gap: 10px;
-    margin-block: 20px;
     align-items: center;
+    margin-bottom: 20px;
     h3 {
       text-transform: capitalize;
     }

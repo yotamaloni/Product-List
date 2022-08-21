@@ -1,6 +1,5 @@
 "use strict";
 
-import { utils } from "./utils.service.js";
 import apiProducts from "../../api.json";
 
 export default {

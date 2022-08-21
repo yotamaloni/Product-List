@@ -25,6 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .product-filter {
+  direction: ltr;
   display: flex;
   justify-content: flex-start;
   img {

@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/views/HomePage.vue'
 import ProductApp from '@/views/ProductApp.vue'
-import SignupPage from '@/views/SignupPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,11 +15,6 @@ const router = createRouter({
       name: 'ProductApp',
       component: ProductApp
     },
-    {
-      path: '/signup',
-      name: 'SignupPage',
-      component: SignupPage
-    }
   ]
 })
 

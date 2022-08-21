@@ -19,7 +19,6 @@
 </template>
 
 <script>
-
 export default {
   props: {
     product: Object,
@@ -32,11 +31,7 @@ export default {
 .product-preview {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   gap: 20px;
-  height: 100%;
-  width: 100%;
   > * {
     width: 100%;
     display: flex;
@@ -44,9 +39,6 @@ export default {
     span {
       font-weight: bold;
     }
-  }
-  img {
-    height: inherit;
   }
 }
 </style>

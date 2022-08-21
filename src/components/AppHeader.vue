@@ -2,8 +2,13 @@
   <section class="app-header flex space-between align-center">
     <a class="logo" href="/">מצא את המוצר</a>
     <nav>
-      <RouterLink class="clean-link" to="/">בית</RouterLink> |
-      <RouterLink class="clean-link" to="/products">מוצרים</RouterLink>
+      <RouterLink class="clean-link" class-active="active-link" to="/"
+        >בית</RouterLink
+      >
+      |
+      <RouterLink class="clean-link" class-active="active-link" to="/products"
+        >מוצרים</RouterLink
+      >
     </nav>
   </section>
 </template>
@@ -21,9 +26,11 @@ export default {};
   background-color: #172b4d;
   nav {
     > * {
+      font-weight: 600;
       transition: color 0.5s ease;
-      &:hover {
-        color: red;
+      &:hover,
+      &.active-link {
+        color: tomato;
       }
     }
   }

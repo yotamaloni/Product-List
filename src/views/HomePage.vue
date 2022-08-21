@@ -4,7 +4,7 @@
       <p className="site-description">
         זאת ההזמדנות שלך למצוא את המוצרים עליהם חלמת! תוכל לבדוק בקלות את זמינות
         המוצרים בכל תאריך שידרש. כל שעליך לעשות הוא לעבור לעמוד המוצרים, לבחור
-        .את התאריך המבוקש ומיד תקבל את רשימת המוצרים הזמינים
+        את התאריך המבוקש ומיד תקבל את רשימת המוצרים הזמינים.
       </p>
       <RouterLink class="clean-link" to="/products">
         <button>לעמוד המוצרים</button>
@@ -72,7 +72,6 @@ export default {
   }
   .img-container {
     max-width: 500px;
-
     img {
       width: 100%;
       border-radius: 5px;

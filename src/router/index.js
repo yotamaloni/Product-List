@@ -15,7 +15,8 @@ const router = createRouter({
       name: 'ProductApp',
       component: ProductApp
     },
-  ]
+  ],
+  linkActiveClass: 'active-link',
 })
 
 export default router

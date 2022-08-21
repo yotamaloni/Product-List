@@ -1,7 +1,11 @@
 <template>
+  <section class="app-container">
   <AppHeader />
-  <RouterView />
-  <AppFooter />
+    <main>
+      <RouterView />
+    </main>
+    <AppFooter />
+  </section>
 </template>
 
 <script>
@@ -18,5 +22,20 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss" scoped>
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex-grow: 1;
+  }
+}
+</style>
+
+
+
 
 

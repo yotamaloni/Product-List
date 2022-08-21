@@ -8,4 +8,10 @@ export default {};
 
 
 <style lang="scss" scoped>
+.app-footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
 </style>

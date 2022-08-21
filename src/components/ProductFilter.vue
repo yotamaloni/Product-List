@@ -1,26 +1,32 @@
 <template>
-  <Datepicker v-model="date" utc    />
-  <pre>{{date}}</pre>
+  <section class="product-filter">
+    <Datepicker v-model="date" utc @update:modelValue="setFilter()" />
+  </section>
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, ref } from "vue";
 
 export default {
-    data() {
-        const date = ref();
-        return {
-          date,
-        }
-    }
-}
+  data() {
+    const date = ref();
+    return {
+      date,
+    };
+  },
+  methods: {
+    setFilter() {
+      this.$emit("set-filter", this.date);
+    },
+  },
+};
 </script>
 
 
 <style lang="scss" scoped>
-.product-preview {
-  gap: 20px;
-  height: 100%;
+.product-filter {
+  display: flex;
+  justify-content: flex-start;
   img {
     height: inherit;
   }

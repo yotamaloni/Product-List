@@ -4,6 +4,7 @@
 
 html {
     font-family: sans-serif;
+    direction: rtl;
 }
 
 body {
@@ -30,9 +31,11 @@ button {
     color: black;
     border-radius: 5px;
 }
+
 button:hover {
     cursor: pointer;
 }
+
 button:active {
     color: white;
     border-color: white;
@@ -61,5 +64,3 @@ a,
 .router-link {
     color: unset;
 }
-
-

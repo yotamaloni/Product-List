@@ -33,29 +33,25 @@ export default {
 
 <style lang="scss" scoped>
 .product-list {
+  font-size: 0.875rem;
   margin-top: 20px;
   ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     width: 100%;
-    flex-wrap: wrap;
     gap: 20px;
     .product-preview-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 10px;
       width: 100%;
       height: 100px;
       background-color: #f2f6fa;
       border-radius: 10px;
-      .actions {
-        > * {
-          background-color: #5e6c84;
-          padding: 10px;
-          border-radius: 10px;
-          transition: background-color 0.5s;
-          color: #fff;
-          &:hover {
-            background-color: lighten($color: #5e6c84, $amount: 10%);
-          }
-        }
+      transition: background-color 0.5s ease;
+      &:hover {
+        background-color: darken(#f2f6fa, 10%);
       }
     }
   }

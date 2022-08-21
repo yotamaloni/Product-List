@@ -1,8 +1,12 @@
 <template>
   <section class="product-app app-main">
-    <h3>Product list</h3>
+    <div class="date-container">
+      <h4>אנא בחר תאריך</h4>
+      <ProductFilter @set-filter="setFilter" />
+    </div>
+
+    <h3>רשימת מוצרים זמינים</h3>
     <pre v-if="products">{{ product }}</pre>
-    <ProductFilter @set-filter="setFilter" />
     <ProductList v-if="products" :products="products" />
   </section>
 </template>
@@ -12,58 +16,46 @@
 import ProductFilter from "@/components/ProductFilter.vue";
 import ProductList from "@/components/ProductList.vue";
 import productService from "@/services/products.service.js";
+import { ref, computed } from "vue";
+
 export default {
   components: {
     ProductList,
-    ProductFilter
+    ProductFilter,
   },
   data() {
+    const date = ref();
     return {
-      filterBy: null,
       products: null,
+      filterBy: null,
+      date,
     };
   },
+
   async created() {
     this.products = await productService.query();
   },
-  computed: {
-    contacts() {
-      return this.$store.getters.contacts;
+  methods: {
+    async setFilter(date) {
+      this.filterBy = { date };
+      this.products = await productService.query(this.filterBy);
     },
-    // contactsToShow() {
-    //   if (!this.filterBy) return this.contacts;
-    //   const regex = new RegExp(this.filterBy.name, "i");
-    //   return this.contacts.filter((contact) => {
-    //     return (
-    //       regex.test(contact.name) ||
-    //       regex.test(contact.phone) ||
-    //       regex.test(contact.email)
-    //     );
-    //   });
-    // },
   },
+  computed: {},
 };
 </script>
 
 
 <style lang="scss" scoped>
 .product-app {
-  h3 {
-    text-transform: capitalize;
-    margin-bottom: 20px;
-  }
-  .actions {
-    > * {
-      background-color: #5e6c84;
-      padding: 5px 5px;
-      border-radius: 10px;
-      transition: background-color 0.5s;
-      color: #fff;
-      &:hover {
-        background-color: lighten($color: #5e6c84, $amount: 10%);
-      }
+  .date-container {
+    display: flex;
+    gap: 10px;
+    margin-block: 20px;
+    align-items: center;
+    h3 {
+      text-transform: capitalize;
     }
-    margin: 20px 0;
   }
 }
 </style>

@@ -12,9 +12,6 @@
         <span>{{ product.price }} ₪</span>
       </p>
     </div>
-    <!-- <pre>{{ product.times.makeDays }}</pre>
-    <pre>{{ product.times.available_days_of_week }}</pre>
-    <pre>{{ product.times.excludeDates }}</pre> -->
   </section>
 </template>
 

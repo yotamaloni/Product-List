@@ -1,22 +1,42 @@
 <template>
   <section class="product-filter">
-    <Datepicker v-model="date" utc @update:modelValue="setFilter()" />
+    <Datepicker
+      v-model="date"
+      :format="format"
+      @update:modelValue="setFilter()"
+      :minDate="new Date()"
+      :maxDate="maxDate"
+    />
   </section>
 </template>
 
 <script>
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 export default {
   data() {
     const date = ref();
+    const format = (date) => {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    };
     return {
       date,
+      format,
     };
   },
   methods: {
     setFilter() {
       this.$emit("set-filter", this.date);
+    },
+  },
+  computed: {
+    maxDate() {
+      const maxDate = new Date();
+      maxDate.setDate(maxDate.getDate() + 14);
+      return maxDate;
     },
   },
 };

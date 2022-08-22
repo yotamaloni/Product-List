@@ -65,6 +65,8 @@ export default {
       font-size: 1rem;
       transition: background-color 0.5s ease;
       font-weight: 600;
+      border-radius: 3px;
+      cursor: pointer;
       &:hover {
         background-color: lighten(#172b4d, 20%);
       }

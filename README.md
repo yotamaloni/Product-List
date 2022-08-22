@@ -2,7 +2,7 @@
 
 ## Author: Yotam Aloni, For: Media Maven
 
-Technologies used:
+Technologies used-
 
 Vue
 

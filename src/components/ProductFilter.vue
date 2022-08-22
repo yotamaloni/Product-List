@@ -4,7 +4,7 @@
       v-model="date"
       :format="format"
       @update:modelValue="setFilter()"
-      :minDate="new Date()"
+      :minDate="minDate"
       :maxDate="maxDate"
     />
   </section>
@@ -36,6 +36,11 @@ export default {
     maxDate() {
       const maxDate = new Date();
       maxDate.setDate(maxDate.getDate() + 14);
+      return maxDate;
+    },
+    minDate() {
+      const maxDate = new Date();
+      maxDate.setDate(maxDate.getDate() + 1);
       return maxDate;
     },
   },

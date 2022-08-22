@@ -7,7 +7,7 @@
 
     <h3>רשימת מוצרים זמינים</h3>
     <pre v-if="products">{{ product }}</pre>
-    <ProductList v-if="products" :products="products" />
+    <ProductList :products="products" />
   </section>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   data() {
     const date = ref();
     return {
-      products: null,
+      products: [],
       filterBy: null,
       date,
     };

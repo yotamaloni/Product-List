@@ -17,7 +17,6 @@ async function query(filterBy = {}) {
 function _getFilteredProducts(products, selectedDate) {
   const nowDate = new Date();
   const dueDate = new Date(selectedDate);
-  if (nowDate > dueDate) return [];
   const filteredProducts = products.filter((product) => {
     return (
       _isMakeDays(product.times.makeDays, dueDate, nowDate) &&

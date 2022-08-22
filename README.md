@@ -20,9 +20,5 @@ Comfortable and elegant design
 
 2. npm run dev
 
-## This app has been uploaded to Github pages
 
-Link : "https://yotamaloni.github.io/Product-List /"
-
-##
 
